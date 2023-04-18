@@ -1,0 +1,23 @@
+.time-info-div{
+    display:inline;
+    float:left;
+}
+.time2{
+    float:left;
+}
+
+.redeem-button {
+    transition: linear 0.1s;
+    transform: rotate(0);
+}
+.redeem-button-rotated {
+    transform: rotate(180deg);
+    transition: linear 0.1s;
+}
+
+.redeem-button:hover, .redeem-button-rotated:hover {
+    background-color: #e6e6e6;
+    height: 23px;
+    width: 23px;
+    transition: linear 0.05s;
+}

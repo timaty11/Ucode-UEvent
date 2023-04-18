@@ -1,0 +1,58 @@
+.Event-name-div {
+    font-family:"Source Sans Pro", Tahoma;
+}
+
+.main-event-content-retracted {
+    overflow: hidden;
+    height: 100px;
+    transition: linear 0.3s;
+}
+
+.main-event-content-unfolded {
+    overflow: hidden;
+    height: 235px;
+    transition: linear 0.3s;
+}
+
+.text-retracted {
+    height: 50px;
+    transition: linear 0.3s;
+}
+
+.text-unfolded {
+    height: auto;
+    transition: linear 0.3s;
+}
+.ease {
+    animation-timing-function: ease;
+}
+
+.slide-ltr {
+    clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+}
+
+.sliding-ltr {
+    animation-name: sliding-ltr;
+    animation-duration: 5s; 
+    animation-fill-mode:forwards;
+    animation-delay: 0.5s;
+}
+@keyframes sliding-ltr {
+    0% {
+        transform: translateX(-100%);
+        clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+    }
+
+    100% {
+        transform: translateX(-0.5%);
+        clip-path: polygon(100% 0, 100% 100%, 0% 100%, 0 0);
+    }
+}
+.text-date-ticket {
+position: relative;
+    display: block;
+    font-family: robotobold,Roboto,Arial,Helvetica,sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: bold;
+    }

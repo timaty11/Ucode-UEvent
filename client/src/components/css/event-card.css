@@ -1,0 +1,292 @@
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Abel);
+/* body{
+  background-color: var(--bs-gray-100);
+} */
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.slider {
+  width: 800px;
+  height: 500px;
+  overflow: hidden;
+  border: 10px solid #000;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navigation {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.bar {
+  width: 30px;
+  height: 8px;
+  margin: 6px;
+  cursor: pointer;
+  background-color: #000;
+  opacity: .5;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+.bar:hover {
+  opacity: 1;
+  transform:scale(1.1);
+}
+
+
+.name{
+  font-family: 'Oswald', sans-serif;
+  font-size: 50px;
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+ 
+}
+.location{
+  margin:50px 0px 0px 0px;
+}
+
+.slides {
+  width: 400%;
+  height: 100%;
+  display: flex;
+}
+
+.slide {
+  width: 25%;
+  transition: all 0.6s ease;
+}
+
+
+.features_items {
+    overflow:hidden;
+}
+
+
+.col-sm-4{
+  border: 1px solid rgb(224, 221, 221);
+
+  text-align: center; 
+
+}
+
+
+.productinfo h2{
+color: #0f67fe;
+font-family: 'Roboto', sans-serif;
+font-size: 24px;
+font-weight: 700;
+
+
+}
+/* 
+
+/*  Dropdown menu*/
+.price-range{
+  margin-top:30px;
+}
+
+
+
+
+
+
+h2.title {
+  color: #0f67fe;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 15px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+
+
+.new, .sale {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+.product-overlay h2{
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+
+
+
+
+
+.single-products:hover .product-overlay {
+  display:block;
+  height:100%;
+}
+
+
+.product-overlay .overlay-content {
+  bottom: 0;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.product-overlay .add-to-cart {
+  background:#fff;
+  border: 0 none;
+  border-radius: 0;
+  color: #0f67fe;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.product-overlay .add-to-cart:hover {
+  background:#fff;
+  color: #0f67fe;
+}
+
+
+.product-overlay p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+
+
+/* button "Buy ticket" */
+a.btn {
+    background:#ffffff;
+    display: inline-block;
+    color: #0f67fe;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .5em 2em;
+    outline: none;
+    border: 2px solid;
+    border-radius: 1px;
+    transition: 0.2s;
+    font-size: 15px;
+    margin-bottom: 25px;
+   
+    font-family: 'Roboto', sans-serif;
+  } 
+  a.btn:hover { background: rgba(120, 85, 29, 0.2) }
+
+
+
+
+
+
+
+/* ----- */
+
+
+.recommended-item-control {
+  position: absolute;
+  top: 41%;
+}
+
+
+.recommended-item-control i:hover {
+  background: #ccccc6;
+}
+
+
+/*************************
+*******404 CSS******
+**************************/
+
+.logo-404 {
+  margin-top: 60px;
+}
+
+.content-404 h1 {
+  color: #363432;
+  font-family: 'Roboto', sans-serif;
+  font-size: 41px;
+  font-weight: 300;
+}
+
+.content-404 img {
+ margin:0 auto;
+}
+
+.content-404 p {
+  color: #363432;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.content-404  h2 {
+  margin-top:50px;
+}
+
+.content-404 h2 a {
+  background: #FE980F;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-size: 44px;
+  font-weight: 300;
+  padding: 8px 40px;
+}
+/* MainItem.jsx */
+.end{
+  padding: 8px 80px;
+
+}
+
+.item-recommend{
+  border: 5px solid darkblue;
+
+}
+.text-recommend{
+  text-align: center;
+
+}
+.comment-down{
+  border: 1px solid rgb(0, 0, 0);
+
+}
+
+.slider-event-data{
+  font-family: 'Noto Sans JP', sans-serif;
+font-size: 20px;
+letter-spacing: 0px;
+word-spacing: 0px;
+color: #ffffff;
+font-weight: bold;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+}
