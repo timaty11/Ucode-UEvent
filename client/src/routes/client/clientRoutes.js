@@ -1,4 +1,4 @@
-const clientPath = 'http://127.0.0.1:5173';
+const clientPath = 'http://localhost:5173';
 
 export default {
   fullMainPagePath: () => clientPath,
@@ -34,9 +34,4 @@ export default {
 
   fullEventPagePath: (eventId) => [clientPath, 'event', eventId].join('/'),
   eventPagePath: (eventId) => '/event/' + eventId,
-
-  // хуйня Vilsak для итемов. Я понимаю шо у вас его нет в бд.
-  // fullLoginPagePath: () => [clientPath, 'item'].join('/'),
-  // loginPagePath: () => '/item',
-
 };

@@ -1,7 +1,7 @@
 import React from "react";
 
 import Spinner from "../common/Spinner.jsx";
-import NavbarElement from "./NavbarElement.jsx";
+import Navbar from "./table/navbar/Navbar.jsx";
 import DataTable from "./table/DataTable.jsx";
 import EventsTable from "./table/events-table/EventsTable.jsx";
 import PromocodesTable from "./table/coupons-table/CouponsTable.jsx";
@@ -30,23 +30,16 @@ const AdminPage = ({ dataCategory }) => {
   const displayData = dataHook[dataCategory]();
 
   return (
+    displayData.isLoading ? <Spinner /> : (
     <div>
-      {
-        displayData.isLoading
-        ?
-        <Spinner />
-        :
-        <div>
-          <NavbarElement />
-          { 
-            dataCategory === "events" ? <EventsTable data={displayData[dataCategory].data.values} /> :
-            dataCategory === "coupons" ? <PromocodesTable data={displayData[dataCategory].data.values} /> :
-            <DataTable data={displayData[dataCategory].data.values} dataCategory={dataCategory} />
-          }
-        </div>
+      <Navbar />
+      { 
+        dataCategory === "events" ? <EventsTable data={displayData[dataCategory].data.values} /> :
+        dataCategory === "coupons" ? <PromocodesTable data={displayData[dataCategory].data.values} /> :
+        <DataTable data={displayData[dataCategory].data.values} dataCategory={dataCategory} />
       }
     </div>
-  )
+  ));
 }
 
 export default AdminPage;

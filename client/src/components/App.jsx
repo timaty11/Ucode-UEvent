@@ -14,6 +14,7 @@ import Coupon from './profile/coupon/Coupon.jsx'
 import Contact from "./common/header/Contact.jsx"
 import About from  "./common/header/About.jsx"
 import Spinner from './common/Spinner.jsx';
+import AdminPage from './admin-panel/AdminPage.jsx';
 
 // FullMainItemPage
 import EventPage from './event-page/EventPage.jsx';
@@ -27,15 +28,8 @@ import EmailConfirm from './auth/EmailConfirm.jsx';
 import PassReset from './auth/PassReset.jsx';
 import PartnerRegister from './auth/partner-register/PartnerRegister.jsx';
 
-// Admin panel
-import AdminPage from './admin-panel/AdminPage.jsx';
-import OrganizationPage from './admin-panel/OrganizationPage.jsx';
-import ModeratorPage from './admin-panel/ModeratorPage.jsx';
-
 import clientRoutes from '../routes/client/clientRoutes.js';
 import adminRoutes from '../routes/client/adminRoutes.js';
-import moderatorRoutes from '../routes/client/moderatorRoutes.js';
-import organizationRoutes from '../routes/client/organizationRoutes.js';
 import { useUserProfile } from '../../hooks/user/useUserProfile.js'
 import UserContext from '../context/UserContext.js'
 import 'react-toastify/dist/ReactToastify.css';
@@ -51,7 +45,7 @@ const App = () => {
       <UserContext.Provider value={{currentUser: userInfo?.values || 'guest'}}>
         <BrowserRouter>
           <Header />
-          <main className='flex-[1_0_auto] dark:bg-gray-900 '>
+          <main className="flex-[1_0_auto] dark:bg-gray-900">
             <Routes>
               <Route path={clientRoutes.mainPagePath()} element={<MainPage />} />
 
@@ -81,12 +75,6 @@ const App = () => {
               <Route path={adminRoutes.ticketsPagePath()} element={<AdminPage dataCategory="tickets" />} />
               <Route path={adminRoutes.couponsPagePath()} element={<AdminPage dataCategory="coupons" />} />
               <Route path={adminRoutes.organizationsPagePath()} element={<AdminPage dataCategory="organizations" />} />
-
-              {/* Moderator routes */}
-              <Route path={moderatorRoutes.mainPagePath()} element={<ModeratorPage />} />
-
-              {/* Organization routes */}
-              <Route path={organizationRoutes.mainPagePath()} element={<OrganizationPage />} />
 
               <Route path="*" element={<PageNotFound />} />
             </Routes>

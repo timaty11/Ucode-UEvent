@@ -15,7 +15,6 @@ const EmailConfirm = () => {
           </div>
         </div>
       </div>
-     
     </div>
   );
 }

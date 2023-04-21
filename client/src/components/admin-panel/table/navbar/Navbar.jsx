@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 
-import adminRoutes from "../../routes/client/adminRoutes.js";
+import adminRoutes from "../../../../routes/client/adminRoutes.js";
 
 
-const NavbarElement = () => {
+const Navbar = () => {
   const navigate = useNavigate();
 
   return (
@@ -43,4 +43,4 @@ const NavbarElement = () => {
   )
 }
 
-export default NavbarElement;
+export default Navbar;
