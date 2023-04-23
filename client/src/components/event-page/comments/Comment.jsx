@@ -11,6 +11,7 @@ import UserContext from '../../../context/UserContext.js';
 
 import default_avatar from '../../../temp/avatar.png';
 
+
 const Comment = ({ data }) => {
   const currentLang = localStorage.getItem('i18nextLng')
   const datePublish = moment(new Date(data.created_at)).locale(currentLang === 'ua' ? 'uk' : currentLang).format('D MMMM,HH:mm');

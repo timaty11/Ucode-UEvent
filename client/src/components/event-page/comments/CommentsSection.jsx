@@ -1,13 +1,13 @@
 import React from 'react';
 import { useMutation } from 'react-query';
 import { useTranslation } from 'react-i18next';
-import Showdown from "showdown";
 
 import Spinner from '../../common/Spinner.jsx';
 import Comment from './Comment.jsx';
 
 import { useEventComments } from '../../../../hooks/events/useEventComments.js'
 import { EventService } from '../../../../services/events.service';
+
 
 const CommentsSection = ({ eventId }) => {
   const [t, i18n] = useTranslation('eventPage');

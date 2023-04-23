@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const CheckboxInputField = ({ id, data, setData }) => {
   return (
     <div className="flex p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-600">

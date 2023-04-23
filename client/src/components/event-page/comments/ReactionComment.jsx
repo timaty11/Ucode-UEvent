@@ -5,21 +5,20 @@ import apiClientRoutes from '../../../routes/api/apiClientRoutes.js';
 import _ from 'lodash';
 
 const ReactionComment = ({ commentId, data, currentUser }) => {
-
   const [activeReactions, setActiveReaction] = React.useState({
     like: false,
     dislike: false,
   });
 
   const [reaction, setReaction] = React.useState(data.reduce(
-        (acc, item) => {
-          return {
-            like: !!item.is_like ? acc.like + 1 : acc.like,
-            dislike: !item.is_like ? acc.dislike + 1 : acc.dislike,
-          };
-        },
-        { like: 0, dislike: 0 }
-      ));
+    (acc, item) => {
+      return {
+        like: !!item.is_like ? acc.like + 1 : acc.like,
+        dislike: !item.is_like ? acc.dislike + 1 : acc.dislike,
+      };
+    },
+    { like: 0, dislike: 0 }
+  ));
 
   useEffect(() => {
     const userReaction = data.find((item) => item.user_id === currentUser.id);

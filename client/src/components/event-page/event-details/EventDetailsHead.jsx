@@ -3,12 +3,14 @@ import '../../css/EventDetailsHead.css';
 import { useTranslation } from 'react-i18next';
 
 import Showdown from 'showdown';
+
 const converter = new Showdown.Converter({
   tables: true,
   simplifiedAutoLink: true,
   strikethrough: true,
   tasklists: true,
 });
+
 
 const EventDetailsHead = ({ eventData, setEdit, edit, }) => {
   const { title, description, categories, poster } = eventData;
@@ -26,10 +28,8 @@ const EventDetailsHead = ({ eventData, setEdit, edit, }) => {
             <div className='w-12 h-2 bg-yellow-600 rounded-t-full -mt-2'></div>
             <div className='bg-[#8e5f27] h-4 w-8 rounded-t-md'></div>
           </div>
-          <div
-            className=' box-content relative h-full w-full relative border-[#0c2e41] border-8 slide-ltr sliding-ltr flex flex-row ease '> 
+          <div className=' box-content relative h-full w-full relative border-[#0c2e41] border-8 slide-ltr sliding-ltr flex flex-row ease'>
             <img className='h-full object-fit'src="https://london.thecomedystore.co.uk/wp-content/uploads/sites/2/2022/03/SUFU-ukraine-header.png"></img>
-        
           </div>
         </div>
       </div>
@@ -44,12 +44,13 @@ const EventDetailsHead = ({ eventData, setEdit, edit, }) => {
               <p class="mt-4">Особливість вистави полягає в тому, що вона презентується в новому форматі та абсолютно відходить від класичних жанрових традицій. "Про що мовчать чоловіки" побудована за правилами нового жанру — стендап.</p>
               <p class="mt-4">Щоб потрапити на цей захід, там достатньо купити електронний квиток на цій сторінці. Втім, на сайті "Kontramarka" ви можете придбати квитки на всі події театру Підвалу Культури.</p>
               <ul class="ml-12 list-disc">
-                  <li>Смішно</li>
-                  <li>Дешево</li>
-                  <li>Емоційно</li>
+                <li>Смішно</li>
+                <li>Дешево</li>
+                <li>Емоційно</li>
               </ul>
             </div>
-          <p className="text-event-description2 dark:text-dark-text-200 ml-6">Так "Про що мовчать чоловіки"?</p>
+            
+            <p className="text-event-description2 dark:text-dark-text-200 ml-6">Так "Про що мовчать чоловіки"?</p>
             <div class=" text-base py-7 pl-2text-gray-600 mt-1 dark:text-dark-text-300">
               <p class="mt-4">Постановка, яка розігруватиметься на сцені Підвалу Культури, створена за п'єсою коміка Роба Беккера "Defending the Caveman". Вона стала популярною у США наприкінці 90-х рр. настільки, що одну з вулиць Нью-Йорка перейменували на "Дорогу Печерної людини" (аналог назви п'єси). </p>
               <p class="mt-4">Інтерес до твору не пропав і досі, тож театральні постановки за мотивами п'єси сьогодні можна помітити на сценах театрів по всьому світу. І кожна інтерпретація — це спосіб дати відповіді на найпотаємніші питання, розкрити тему щастя сімейних стосунків і показати абсурдність конфліктних ситуацій</p>
