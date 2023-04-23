@@ -1,14 +1,14 @@
 import React from 'react';
-import $api from '../../../../../../utils/api.js'
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
+import Spinner from '../../../../common/Spinner.jsx'
 import InputField from '../../../../common/form/InputField.jsx';
 import TextField from '../../../../common/form/TextField.jsx';
 
-import clientRoutes from '.././../../../../routes/client/clientRoutes.js';
 import apiRoutes from '.././../../../../routes/api/apiClientRoutes.js';
-import Spinner from '../../../../common/Spinner.jsx'
-import { useTranslation } from 'react-i18next';
+import $api from '../../../../../../utils/api.js'
+
 
 const FormPartner = ({ setCompleteStep, completeStep }) => {
   const [isLoadingButton, setLoadingButton] = React.useState(false);
@@ -139,9 +139,7 @@ const FormPartner = ({ setCompleteStep, completeStep }) => {
 
               <div className="w-full flex justify-center">
                 <button disabled={completeStep.step3.isComplete} type="submit" className="w-[50%] flex justify-center items-center px-5 mt-5 py-2.5 text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 disabled:opacity-80">
-                {!isLoadingButton ? (
-                t('step3.button')
-                ) : (
+                { !isLoadingButton ? t('step3.button') : (
                   <>
                     <svg className="-ml-1 mr-3 h-5 w-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>

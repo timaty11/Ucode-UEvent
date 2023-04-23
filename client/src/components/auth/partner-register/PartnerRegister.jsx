@@ -1,10 +1,12 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 import StapperProgress from './partner-components/StapperProgress';
+
 import PageProgress from './partner-components/PageProgress.jsx';
 import Spinner from '../../common/Spinner.jsx';
+
 import $api from '../../../../utils/api.js';
 import apiClientRoutes from '../../../routes/api/apiClientRoutes';
+
 
 export default () => {
   const [isLoading, setLoading] = React.useState(true);
@@ -43,22 +45,10 @@ export default () => {
     fetch();
   }, []);
 
-  return isLoading ? (
-    <Spinner />
-  ) : (
+  return isLoading ?  <Spinner /> : (
     <div className="container m-auto flex flex-col dark:bg-gray-900">
-      <StapperProgress
-        stepper={stepper}
-        setStepper={setStepper}
-        completeStep={completeStep}
-        setCurrentStep={setCurrentStep}
-        currentStep={currentStep}
-      />
-      <PageProgress
-        step={currentStep}
-        completeStep={completeStep}
-        setCompleteStep={setCompleteStep}
-      />
+      <StapperProgress stepper={stepper} setStepper={setStepper} completeStep={completeStep} setCurrentStep={setCurrentStep} currentStep={currentStep} />
+      <PageProgress step={currentStep} completeStep={completeStep} setCompleteStep={setCompleteStep} />
     </div>
   );
 };
