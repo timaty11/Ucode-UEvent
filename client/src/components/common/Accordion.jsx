@@ -1,20 +1,10 @@
 import { useState } from 'react';
-import {
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-} from '@material-tailwind/react';
+import { Accordion, AccordionHeader, AccordionBody } from '@material-tailwind/react';
+
 
 const AccordionComponent = ({ handleOpen, open, head, body, count, children, style }) => {
  const svg = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className={`${count === open ? 'rotate-180' : ''} h-5 w-5 transition-transform`}
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-    >
+    <svg className={`${count === open ? 'rotate-180' : ''} h-5 w-5 transition-transform`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} xmlns="http://www.w3.org/2000/svg">
       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
     </svg>
   );
@@ -25,8 +15,8 @@ const AccordionComponent = ({ handleOpen, open, head, body, count, children, sty
         {head}
       </AccordionHeader>
       <AccordionBody className="text-justify p-3">
-        {body}
-        {children}
+        { body }
+        { children }
         </AccordionBody>
     </Accordion>
   );

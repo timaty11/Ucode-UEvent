@@ -58,21 +58,18 @@ export default () => {
                   <span className="px-7 relative text-black group-hover:text-white dark:text-dark-text-400">{ t('userDropdownMenu.profile', { ns: 'header' }) }</span>
                 </button>
               ) : (
-                <div>
-                  {/* <span className="px-7 relative text-black group-hover:text-white dark:text-dark-text-400">{ t('userDropdownMenu.authorizeSuggestion', { ns: 'header' }) }</span> */}
-                  <div className="flex">
+                <div className="flex">
+                  <div className="absolute inset-0 w-2 bg-blue-600 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+
+                  <button onClick={() => location.href = clientRoutes.loginPagePath()} className="group flex text-left relative h-10 w-full items-center overflow-hidden bg-white text-lg shadow dark:bg-dark-bg-800 dark:text-dark-text-400">
                     <div className="absolute inset-0 w-2 bg-blue-600 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                    <span className="px-7 relative text-black group-hover:text-white dark:text-dark-text-400">{ t('common.signIn', { ns: 'auth' }) }</span>
+                  </button>
 
-                    <button onClick={() => location.href = clientRoutes.loginPagePath()} className="group flex text-left relative h-10 w-full items-center overflow-hidden bg-white text-lg shadow dark:bg-dark-bg-800 dark:text-dark-text-400">
-                      <div className="absolute inset-0 w-2 bg-blue-600 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                      <span className="px-7 relative text-black group-hover:text-white dark:text-dark-text-400">{ t('common.signIn', { ns: 'auth' }) }</span>
-                    </button>
-
-                    <button onClick={() => location.href = clientRoutes.registerPagePath()} className="group flex text-left relative h-10 w-full items-center overflow-hidden bg-white text-lg shadow dark:bg-dark-bg-800 dark:text-dark-text-400">
-                      <div className="absolute inset-0 w-0 bg-blue-600 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                      <span className="px-7 relative text-black group-hover:text-white dark:text-dark-text-400">{ t('common.signUp', { ns: 'auth' }) }</span>
-                    </button>
-                  </div>
+                  <button onClick={() => location.href = clientRoutes.registerPagePath()} className="group flex text-left relative h-10 w-full items-center overflow-hidden bg-white text-lg shadow dark:bg-dark-bg-800 dark:text-dark-text-400">
+                    <div className="absolute inset-0 w-0 bg-blue-600 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                    <span className="px-7 relative text-black group-hover:text-white dark:text-dark-text-400">{ t('common.signUp', { ns: 'auth' }) }</span>
+                  </button>
                 </div>
               )
             }
@@ -82,19 +79,21 @@ export default () => {
           <Menu.Item>
             <DarkModeSwitch />
           </Menu.Item>
+
           { localStorage.getItem('token') ?
-          <form onSubmit={logoutButtonHandle}>
-            <Menu.Item>
-              {({ active }) => (
-                <button className="group text-left relative h-10 w-56 overflow-hidden bg-white text-lg shadow dark:bg-dark-bg-800">
-                  <div className="absolute inset-0 w-2 bg-blue-600 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                  <span className="px-7 relative text-black group-hover:text-white dark:text-dark-text-400">{ t('userDropdownMenu.logout', { ns: 'header' }) }</span>
-                </button>
-              )}
-            </Menu.Item>
-          </form> : <></>}
+            <form onSubmit={logoutButtonHandle}>
+              <Menu.Item>
+                {({ active }) => (
+                  <button className="group text-left relative h-10 w-56 overflow-hidden bg-white text-lg shadow dark:bg-dark-bg-800">
+                    <div className="absolute inset-0 w-2 bg-blue-600 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                    <span className="px-7 relative text-black group-hover:text-white dark:text-dark-text-400">{ t('userDropdownMenu.logout', { ns: 'header' }) }</span>
+                  </button>
+                )}
+              </Menu.Item>
+            </form> : <></>
+          }
         </Menu.Items>
       </Transition>
     </Menu>
   );
-};
+}

@@ -12,7 +12,7 @@ const LanguageSelectElement = ({ i18n, lng }) => {
             <div className={`flag-icon flag-icon-${lng === 'en' ? 'us' : lng}`} />
           </div>
 
-          <div className="h-7 flex items-center justify-center ">
+          <div className="h-7 flex items-center justify-center">
             <div onClick={() => i18n.changeLanguage(lng)} key={lng} className={i18n.resolvedLanguage === lng } disabled={i18n.resolvedLanguage === lng}> 
               {lng}
             </div>
